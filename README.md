@@ -4,16 +4,20 @@ This is a cheat sheet on TypeScript (mostly notes-to-self). They are incomplete 
 
 ### Initialize a TypeScript project
 
-```bash
-npm init -y # quickly initializes nodejs project with package.json file
+```sh
+yarn init -y # quickly initializes nodejs project with package.json file
+yarn add typescript --dev # installs typescript
+yarn tsc --init # initializes TS project with tsconfig.json file
 ```
 
-```bash
-npm install typescript --save-dev # installs typescript
-tsc --init # initializes TS project with tsconfig.json file
-```
+You need to use `yarn tsc --int` instead of `tsc --init` because `tsc` is not installed globally.
+When you run `yarn` (or `npm install`), the dependencies and devDependencies from your
+`package.json` are installed locally within the `node_modules` folder of your project. 
+However, the binaries from the local `node_modules/.bin` directory are not automatically 
+available in your terminal environment. This is why when you try to run `tsc --init` directly, 
+the terminal is unable to find the command, as it's not installed globally.
 
-Source: [typescriptlang.org](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
+Source: ChatGPT
 
 ### Microsoft Cheat Sheets
 
